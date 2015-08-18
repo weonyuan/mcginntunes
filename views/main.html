@@ -1,0 +1,28 @@
+<style>
+  #container {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+  }
+  .player {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+</style>
+
+<div id="container">
+  <h1>{{ header }}</h1>
+
+  <div class="player">
+    <div>Spotify player here</div>
+    <audio ng-src="{{ audio }}" controls="" autoplay></audio>
+    <div class="actionButtons">
+      <button>Eminem</button>
+      <button>Fall Out Boy</button>
+    </div>
+    <a href="#" ng-click="login()">Click here!</a>
+  </div>
+</div>
