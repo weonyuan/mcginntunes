@@ -13,16 +13,16 @@
   }
 </style>
 
-<div id="container">
+<div id="container" ng-init="login()">
   <h1>{{ header }}</h1>
-
+  <p>Time remaining: {{ timer }}</p>
+  <p>Score: {{ score }}</p>
+  <p>Guess: {{ guess }}</p>
   <div class="player">
-    <div>Spotify player here</div>
-    <audio ng-src="{{ audio }}" controls="" autoplay></audio>
+    <audio ng-src="{{ audio }}" controls=""></audio>
     <div class="actionButtons">
-      <button>Eminem</button>
-      <button>Fall Out Boy</button>
+      <button ng-click="decide('eminem')">Eminem</button>
+      <button ng-click="decide('fall out boy')">Fall Out Boy</button>
     </div>
-    <a href="#" ng-click="login()">Click here!</a>
   </div>
 </div>
