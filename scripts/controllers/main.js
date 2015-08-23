@@ -1,6 +1,8 @@
 'use strict';
 
-// need to check authentication state without having to call login everytime
+// need to check authentication state without having to call login everytime [not much priority]
+// need to terminate the game after... (stop player; stop timer; disable buttons; play again?)
+// time's up; reached end of playlist
 
 
 app.controller('MainCtrl', [
@@ -58,14 +60,27 @@ app.controller('MainCtrl', [
     } else {
       // stop the player
       console.log('time up');
+      gameOver();
     }
   };
 
   var randomNumber = Math.floor(Math.random() * tracks.length);
   
+  var gameOver = function() {
+    console.log('gameOver()');
+    var player = document.getElementById('player');
+    player.src = '';
+    // disable buttons
+    // when timer ends or all songs played
+    // stop music
+    // display final score
+    // try again?
+  }
+
   $scope.loadMusic = function() {
     console.log('loadMusic()');
   	
+    // generate new random number
     randomNumber = Math.floor(Math.random() * tracks.length);
   	console.log(tracks[randomNumber]['track']['artists'][0]['name']);
   	console.log(tracks[randomNumber]['track']['name']);
