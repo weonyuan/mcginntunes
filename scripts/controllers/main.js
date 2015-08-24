@@ -18,6 +18,7 @@ app.controller('MainCtrl', [
   var tracks = [];
   $scope.score = 0;
   var totalTime = 60; // seconds
+  var tracksRemaining = 0;
   
   $scope.login = function() {
     Spotify.login()
@@ -30,6 +31,7 @@ app.controller('MainCtrl', [
   		  Spotify.getPlaylistTracks('weon.yuan', '2XNdp0gQQGYdPTu4tXHfhD')
         .then(function(data) {
           tracks = data['items'];
+          tracksRemaining = tracks.length;
           
   		    console.log('init');
           $scope.loadMusic();
@@ -80,13 +82,28 @@ app.controller('MainCtrl', [
   $scope.loadMusic = function() {
     console.log('loadMusic()');
   	
-    // generate new random number
+    // generate random number
     randomNumber = Math.floor(Math.random() * tracks.length);
-  	console.log(tracks[randomNumber]['track']['artists'][0]['name']);
-  	console.log(tracks[randomNumber]['track']['name']);
-  	
-  	previewUrl = tracks[randomNumber]['track']['preview_url'];
-  	$scope.audio = $sce.trustAsResourceUrl(previewUrl);
+    
+    // if current track is null, load a new track
+    if (tracks[randomNumber] == null) {
+      console.log('url is null');
+      if (tracksRemaining != 0) {
+        $scope.loadMusic();
+      } else {
+        // game over man
+        gameOver();
+      }
+    } else {
+      --tracksRemaining;
+      console.log(tracksRemaining);
+      previewUrl = tracks[randomNumber]['track']['preview_url'];
+
+  	  console.log(tracks[randomNumber]['track']['artists'][0]['name']);
+  	  console.log(tracks[randomNumber]['track']['name']);
+
+      $scope.audio = $sce.trustAsResourceUrl(previewUrl);
+  	}
   };
   
   $scope.decide = function(answer) {
@@ -99,7 +116,9 @@ app.controller('MainCtrl', [
       $scope.score++;
     } else { $scope.guess = 'Wrong...'; }
 
-    // play the next song
+    tracks[randomNumber] = null;
+    console.log(tracks);
+    // play the next track
     $scope.loadMusic();
   };
 }]);
