@@ -1,3 +1,16 @@
-.footer {
-  margin: 10px;
+body {
+  width: 100%;
+}
+
+footer {
+  border-top: 1px solid #e9e9e9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 700px;
+}
+
+#countdown {
+  text-align: center;
 }

@@ -1,29 +1,4 @@
-<style>
-  h1 {
-    text-align: center;
-  }
-  #controls {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  #leftBtn {
-    float: left;
-  }
-  #rightBtn {
-    float: right;
-  }
-</style>
-
-<h1>{{ header }}</h1>
-<p>Time remaining: {{ timer }}</p>
-<p>Score: {{ score }}</p>
-<p>Guess: {{ guess }}</p>
-<div id="controls" ng-init="login()">
-  <audio id="player" ng-src="{{ audio }}" autoplay></audio>
-  <div class="actionButtons">
-    <button id="leftBtn" ng-click="decide('eminem')">Eminem</button>
-    <button id="rightBtn" ng-click="decide('fall out boy')">Fall Out Boy</button>
-  </div>
-</div>
+<p>{{ about }}</p>
+<form action="#/play">
+  <input type="submit" value="Play">
+</form>

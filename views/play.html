@@ -1,0 +1,39 @@
+<style>
+  h1 {
+    text-align: center;
+  }
+  #controls {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #countdown, #finalScore {
+    font-size: 2.5em;
+  }
+  #playContent {
+    text-align: center;
+  }
+  #leftBtn {
+    float: left;
+  }
+  #rightBtn {
+    float: right;
+  }
+</style>
+
+<div id="countdown">
+  <p>{{ countdown }}</p>
+</div>
+<div id="playContent">
+  <p>Time remaining: {{ timer }}</p>
+  <p>Score: {{ score }}</p>
+  <p>Guess: {{ guess }}</p>
+  <div id="controls" ng-init="login()">
+    <audio id="player" ng-src="{{ audio }}" autoplay></audio>
+    <div class="actionButtons">
+      <button id="leftBtn" ng-click="decide('eminem')">Eminem</button>
+      <button id="rightBtn" ng-click="decide('fall out boy')">Fall Out Boy</button>
+    </div>
+  </div>
+</div>
