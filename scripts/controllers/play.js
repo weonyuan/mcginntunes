@@ -16,7 +16,7 @@ app.controller('PlayCtrl', [
   var previewUrl = '';
   var tracks = [];
   $scope.score = 0;
-  var totalTime = 0; // seconds
+  var totalTime = 45; // seconds
   var tracksRemaining = 0;
   var countdownTime = 3; // seconds
   
