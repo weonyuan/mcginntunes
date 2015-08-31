@@ -35,7 +35,6 @@ app.controller('PlayCtrl', [
           
   		    console.log('init');
           $scope.readyCountdown();
-          //$scope.loadMusic();
           return tracks;
   		  });	  
     }, function(error) {
