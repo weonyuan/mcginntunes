@@ -31,5 +31,5 @@ var app = angular
       });
     SpotifyProvider.setClientId('cb402085aa2545b99103a560fb4be159');
     SpotifyProvider.setScope('user-read-private playlist-read-private');
-    SpotifyProvider.setRedirectUri('http://localhost:8888/views/callback.html');
+    SpotifyProvider.setRedirectUri('http://weonyuan.github.io/mcginndog/views/callback.html');
   });
