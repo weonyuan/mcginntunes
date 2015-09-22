@@ -8,7 +8,7 @@
     margin-right: auto;
     width: 50%;
   }
-  #countdown, #finalScore {
+  .headerContent div {
     font-size: 2.5em;
   }
   #playContent {
@@ -22,13 +22,14 @@
   }
 </style>
 
-<div id="countdown">
+<div id="countdown" class="headerContent">
   <p>{{ countdown }}</p>
 </div>
 <div id="playContent">
-  <p>Time remaining: {{ timer }}</p>
-  <p>Score: {{ score }}</p>
-  <p>Guess: {{ guess }}</p>
+  <p class="headerContent">
+    Time left:
+    <div>{{ timer }}</div>
+  </p>
   <div id="controls" ng-init="login()">
     <audio id="player" ng-src="{{ audio }}" autoplay></audio>
     <div class="actionButtons">

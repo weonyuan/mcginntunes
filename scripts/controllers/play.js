@@ -74,7 +74,6 @@ app.controller('PlayCtrl', [
       totalTime--;
     } else {
       // stop the player
-      console.log('time up');
       gameOver();
     }
   };
@@ -82,28 +81,18 @@ app.controller('PlayCtrl', [
   var randomNumber = Math.floor(Math.random() * tracks.length);
   
   var gameOver = function() {
-    console.log('gameOver()');
-    var player = document.getElementById('player');
-    player.src = '';
+    $('#playContent').empty();
 
     var scoreMsgHtml = '<p>Your final score is...</p>';
-    scoreMsgHtml += '<div id="finalScore">' + $scope.score + '</div>';
+    scoreMsgHtml += '<div class="headerContent">' + $scope.score + '</div>';
 
     var retryHtml = '<form action="/"> <input type="submit" value="Retry"></form>';
     
-    $('#playContent').empty();
     $(scoreMsgHtml).appendTo('#playContent');
     $(retryHtml).appendTo('#playContent');
-    // disable buttons
-    // when timer ends or all songs played
-    // stop music
-    // display final score
-    // try again?
   }
 
   $scope.loadMusic = function() {
-    console.log('loadMusic()');
-  	
     // generate random number
     randomNumber = Math.floor(Math.random() * tracks.length);
     
