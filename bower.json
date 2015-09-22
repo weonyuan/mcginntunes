@@ -1,0 +1,19 @@
+{
+  "name": "mcginndog",
+  "version": "0.0.0",
+  "authors": [
+    "weonyuan <weon.yuan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "bootstrap": "~3.3.5",
+    "angular-spotify": "~1.0.0"
+  }
+}
