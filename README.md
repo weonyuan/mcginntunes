@@ -1,2 +1,2 @@
-# mcginndog
-THE REALEST APP.
+# mcginntunes
+Dedicated to the mcginndogg.
