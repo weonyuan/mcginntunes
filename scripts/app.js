@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name mcgindogApp
+ * @name mcginntunesApp
  * @description
- * # mcgindogApp
+ * # mcginntunesApp
  *
  * Main module of the application.
  */
 var app = angular
-  .module('mcginndogApp', [
+  .module('mcginntunesApp', [
     'ngCookies',
     'ngResource',
     'ngRoute',
@@ -31,5 +31,5 @@ var app = angular
       });
     SpotifyProvider.setClientId('cb402085aa2545b99103a560fb4be159');
     SpotifyProvider.setScope('user-read-private playlist-read-private');
-    SpotifyProvider.setRedirectUri('http://weonyuan.github.io/mcginndog/views/callback.html');
+    SpotifyProvider.setRedirectUri('http://weonyuan.github.io/mcginntunes/views/callback.html');
   });
