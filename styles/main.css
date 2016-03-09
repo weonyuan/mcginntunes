@@ -38,3 +38,7 @@ footer {
 #countdown {
   text-align: center;
 }
+
+.actionButtons button {
+  margin: 20px;
+}

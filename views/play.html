@@ -1,51 +1,35 @@
 <style>
-  h1 {
-    text-align: center;
-  }
   #controls {
-    display: block;
+    display: inline;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
   }
-  .headerContent div {
-    font-size: 2.5em;
-  }
   #playContent {
     text-align: center;
-  }
-  #leftBtn {
-    float: left;
-  }
-  #rightBtn {
-    float: right;
   }
 </style>
 
 <div id="countdown" class="headerContent">
   <p>{{ countdown }}</p>
 </div>
-<div id="playContent">
-  <div class="col-md-12">
-    <table align="center" class="play-display">
-      <tr>
-        <th>Score</th>
-        <td class="display-border" rowspan="2"></td>
-        <th>Time</th>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>65</td>
-      </tr>
-    </table>
-  </div>
-  <p class="headerContent">
-  </p>
-  <div id="controls">
+<div id="playContent" class="col-md-12">
+  <table align="center" class="play-display">
+    <tr>
+      <th>Score</th>
+      <td class="display-border" rowspan="2"></td>
+      <th>Time</th>
+    </tr>
+    <tr>
+      <td>{{ score }}</td>
+      <td>{{ timer }}</td>
+    </tr>
+  </table>
+  <div id="controls" ng-init="login()">
     <audio id="player" ng-src="{{ audio }}" autoplay></audio>
     <div class="actionButtons">
-      <button id="leftBtn" class="btn btn-primary btn-circle" ng-click="decide(EMINEM)">Eminem</button>
-      <button id="rightBtn" class="btn btn-danger btn-circle" ng-click="decide(FOB)">Fall Out<br>Boy</button>
+      <button class="btn btn-primary btn-circle" ng-click="decide(EMINEM)">Eminem</button>
+      <button class="btn btn-danger btn-circle" ng-click="decide(FOB)">Fall Out<br>Boy</button>
     </div>
   </div>
 </div>
