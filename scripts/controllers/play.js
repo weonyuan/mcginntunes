@@ -13,6 +13,9 @@ app.controller('PlayCtrl', [
   'Spotify',
   function($scope, $location, $sce, $timeout, Spotify) {
   
+  var EMINEM = 'eminem';
+  var FOB = 'fall out boy';
+
   var previewUrl = '';
   var tracks = [];
   $scope.score = 0;
